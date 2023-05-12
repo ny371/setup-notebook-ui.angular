@@ -1,0 +1,89 @@
+<div class="add-session">
+    <button mat-raised-button color="accent">Add Session</button>
+</div>
+
+<div>
+    <mat-tab-group animationDuration="20ms">
+        <mat-tab *ngFor="let session of sessionList; index as i" [label]=session.name>
+            TODO: Track Consumable vs Hard Parts differently?
+            <mat-grid-list cols="3" rowHeight="2:1">
+                <mat-grid-tile><h3>Info</h3>
+                    <br>
+                    Time: 9:00AM
+                    <br>
+                    Conditions: {{ sessionList[i]['conditions'] }}
+                    <br>
+                </mat-grid-tile>
+                <mat-grid-tile><h3>Tires</h3>
+                    <br>
+                    Tires: {{ session['tires']['type'] }}, {{ session['tires']['size'] }}
+                    <br>
+                    Set: {{ session['tires']['set'] }}
+                    <br>
+                    Heat Cyle: {{ session['tires']['heat_cycles'] }}
+                    <br>
+                    Wheel Size: 17x10
+                    <br>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <h3>Suspension</h3>
+                    <br>
+                    Front Springs: 800# 7"
+                    <br>
+                    Rear Springs: 750# 8"
+                    <br>
+                    Front Shocks: 11R/6C 
+                    <br>
+                    Rear Shocks: 9R/5C
+                    <br>
+                    Front Sway Bar: .120 wall 1/6
+                    <br> 
+                    Rear Sway Bar: solid 7/7
+                    <br>
+                    Alignment!
+                    <br>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <h3>Aero</h3>
+                    <br>
+                    Splitter: 4"
+                    <br>
+                    Wing: Aeromotions, size?, setting: 2/12, 1* AoA
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <h3>Brakes</h3>
+                    <br>
+                    Front Calipers: OEM, 45 sessions
+                    <br>
+                    Front Pads: Carbotech XP20, 10 sessions
+                    <br>
+                    Rear Calipers: OEM, 124 sessions
+                    <br>
+                    Rear Pads: Raybestos ST43, 25 sessions
+                    <br>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <h3>Laps</h3>
+                    <br>
+                    Lap Count: 10
+                    <br>
+                    Fast Lap: 1:33.5
+                    <br>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <h3>Notes</h3>
+                    <br>
+                    Car was awful
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <h3>Engine</h3>
+                    <br>
+                    Tune: OEM
+                    <br>
+                    Hours on Oil: auto calc this
+                </mat-grid-tile>
+            </mat-grid-list>
+                          
+        </mat-tab>
+    </mat-tab-group>
+</div>

@@ -1,0 +1,12 @@
+.add-session {
+    width: 80%;
+    margin: 10px auto;
+}
+
+h3 {
+    margin: 10px;
+}
+
+mat-grid-tile {
+    background: lightblue;
+}

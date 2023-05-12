@@ -1,0 +1,8 @@
+.main-panel {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.mat-mdc-form-field + .mat-mdc-form-field {
+    margin-left: 8px;
+}

@@ -1,0 +1,32 @@
+.filter-events {
+  width: 80%;
+  margin: 10px auto;
+  display: flex;
+}
+
+/* .add-event {
+  width: 80%;
+  margin: 10px auto;
+  box-align: right;
+} */
+
+.events-table {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.header-row {
+  background-color: rgb(174, 171, 171);
+  color: black;
+}
+
+/* TODO: not working :( fix hover
+.data-rows {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.data-rows:hover {
+  border-color: currentColor;
+} */
