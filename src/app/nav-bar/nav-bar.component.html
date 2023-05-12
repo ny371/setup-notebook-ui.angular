@@ -36,10 +36,14 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button> -->
-      <span class="spacer"><a href="/">Track Setup Notebook</a></span>
+      <span class="spacer">
+        <a routerLink="/" routerLinkActive="active">Track Setup Notebook</a>
+      </span>
       <!-- <span class="spacer"></span> -->
-      <span class="spacer"><button mat-raised-button color="accent" routerLink="/cars" routerLinkActive="active">Cars</button>
-      <button mat-raised-button color="accent" routerLink="/events" routerLinkActive="active">Events</button></span>
+      <span class="spacer">
+        <button mat-raised-button color="accent" routerLink="/cars" routerLinkActive="active">Cars</button>
+      <button mat-raised-button color="accent" routerLink="/events" routerLinkActive="active">Events</button>
+      </span>
       <!-- <button mat-raised-button color="accent">Add Event</button> -->
       <!-- <span class="spacer"></span> -->
       <!-- <a href="#">Create Event</a> -->
