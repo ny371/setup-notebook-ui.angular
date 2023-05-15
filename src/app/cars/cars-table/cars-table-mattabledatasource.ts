@@ -22,7 +22,6 @@ export class CarsTableDataSource extends MatTableDataSource<CarsTableItem> {
   constructor(private carsService: CarsService) {
     super();
     this.carsService.getCars().subscribe((data: CarsTableItem[])=>{
-      console.log(data);
       this.data = data;
     });
   }

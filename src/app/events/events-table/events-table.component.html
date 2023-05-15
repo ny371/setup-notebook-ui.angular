@@ -43,7 +43,6 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-row"></tr>
     <tr 
       mat-row
-      (click)="logIt(row)"
       *matRowDef="let row; columns: displayedColumns;"
       class="data-rows"
       routerLink="/events/{{ row.id }}"></tr>

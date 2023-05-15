@@ -17,17 +17,17 @@
         <mat-expansion-panel-header>
             <mat-panel-title>
             {{ eventDetails.date | date }}
-            <br>
-            {{ eventDetails.eventName }}
             </mat-panel-title>
             <mat-panel-description>
-            <p>{{ eventDetails.track }}</p>
-            {{panelOpenState ? 'open' : 'closed'}}
+            Event: {{ eventDetails.event_name }}
+            <br>
+            Track: {{ eventDetails.track }}
+            <!-- {{panelOpenState ? 'open' : 'closed'}} -->
             </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>Best Lap: {{ eventDetails.bestLap }}</p>
+        <p>Best Lap: {{ eventDetails.best_lap }}</p>
         <br>
-        Car: {{ eventDetails.car_id }}
+        Car: {{ carDetails.year }} {{ carDetails.make }} {{ carDetails.model }}
         </mat-expansion-panel>
     </mat-accordion>
 </div>

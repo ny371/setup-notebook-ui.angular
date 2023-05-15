@@ -3,6 +3,7 @@ import { IEventsTableItem } from '../events-table/events-table-mattabledatasourc
 import { EventsService } from '../../services/events.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CarsService } from 'src/app/services/cars.service';
+import { CarsTableItem } from 'src/app/cars/cars-table/cars-table-mattabledatasource';
 
 @Component({
   selector: 'app-event-details',
@@ -15,18 +16,25 @@ export class EventDetailsComponent implements OnInit{
   eventDetails: IEventsTableItem; // can use eventDetails!: IEventsTableItem to allow it to be uninitialized but still set to a type
   eventId: number = 0;
   carId: number = 0;
-  carDetails: string = '';
+  carDetails: CarsTableItem;
 
   constructor(private route: ActivatedRoute, private eventsService: EventsService, private carsService: CarsService) {
     this.eventDetails = {
       id: 0,
-      eventName: 'null',
+      event_name: 'null',
       date: '01/01/1900',
       track: 'null',
-      bestLap: 'null',
+      best_lap: 'null',
       car_id: 0,
       sessions: []
     };
+
+    this.carDetails = {
+      id: 0,
+      year: 1990,
+      make: 'null',
+      model: 'null',
+    }
   }
 
   ngOnInit() {
@@ -34,22 +42,14 @@ export class EventDetailsComponent implements OnInit{
       let eventId = Number(params.get('id'));
       if (eventId)
         this.eventId = eventId;
-      // console.log(this.eventId)
     });
 
     this.eventsService.getEventDetails(this.eventId).subscribe((data: IEventsTableItem) => {
-      // console.log(data);
       this.eventDetails = data;
-      console.log(data);
       this.carId = data['car_id'];
+      this.carsService.getCarDetails(this.carId).subscribe((data: any) => {
+        this.carDetails = data;
+      });
     });
-
-    this.carsService.getCarDetails(this.carId).subscribe((data: any) => {
-      this.carDetails = data;
-    });
-  }
-
-  logIt(eventDetails:any) {
-    console.log(eventDetails)
   }
 }
