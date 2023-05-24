@@ -5,9 +5,9 @@ import { EventsService } from '../../services/events.service';
 export interface IEventsTableItem {
   id: number;
   date: string; // TODO: should this be Date type for type safety and consistency? But then it messes up sort/filter :(
-  eventName: string;
+  event_name: string;
   track: string;
-  bestLap: string;
+  best_lap: string;
   car_id: number;
   sessions: Array<any>;
 }
@@ -25,7 +25,6 @@ export class EventsTableDataSource extends MatTableDataSource<IEventsTableItem> 
   constructor(private eventsService: EventsService) {
     super();
     this.eventsService.getEvents().subscribe((data: IEventsTableItem[])=>{
-      console.log(data);
       this.data = data;
     });
 

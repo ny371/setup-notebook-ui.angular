@@ -23,7 +23,6 @@ export class SessionsTabsComponent implements OnInit {
 
     this.eventsService.getSessions(this.eventId).subscribe((data: any) => {
       this.sessionList = data;
-      console.log(data);
     })
 
   }

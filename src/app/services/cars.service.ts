@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class CarsService {
 
-  baseUrl: string = 'http://localhost:5000/cars/'
+  // baseUrl: string = 'http://localhost:5000/cars/'
+  baseUrl: string = 'https://6n28p0nta0.execute-api.us-east-1.amazonaws.com/dev/cars/'
 
   constructor(private httpCLient: HttpClient) { }
 

@@ -19,7 +19,8 @@ export class EventsTableComponent implements AfterViewInit {
   filterValue: string = '';
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['date', 'eventName', 'track', 'bestLap'];
+  // displayedColumns = ['date', 'eventName', 'track', 'bestLap'];
+  displayedColumns = ['date', 'eventName', 'track'];
 
   constructor(private eventsService: EventsService) {
     this.dataSource = new EventsTableDataSource(eventsService);
@@ -39,9 +40,5 @@ export class EventsTableComponent implements AfterViewInit {
     else {
       this.dataSource.filter = ''
     }
-  }
-
-  logIt(row:any) {
-    console.log(row)
   }
 }

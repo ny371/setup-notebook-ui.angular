@@ -39,8 +39,4 @@ export class CarsTableComponent implements AfterViewInit {
       this.dataSource.filter = ''
     }
   }
-  
-  logIt(row:any) {
-    console.log(row)
-  }
 }
